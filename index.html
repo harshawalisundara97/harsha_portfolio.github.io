@@ -185,6 +185,21 @@
       box-shadow: 0 12px 30px rgba(110, 231, 216, 0.18);
     }
 
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-cv {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: rgba(255, 255, 255, 0.12);
+      color: var(--text);
+      box-shadow: none;
+    }
+
     .hero {
       position: relative;
       padding: 86px 0 40px;
@@ -969,8 +984,15 @@
         padding-top: 6px;
       }
 
-      .nav-cta {
+      .nav-actions {
         order: 2;
+        width: 100%;
+      }
+
+      .nav-cta,
+      .nav-cv {
+        flex: 1 1 0;
+        justify-content: center;
       }
     }
 
@@ -1002,6 +1024,17 @@
         justify-content: center;
         padding: 12px 14px;
         font-size: 0.92rem;
+      }
+
+      .nav-actions {
+        width: 100%;
+        gap: 10px;
+      }
+
+      .nav-actions .nav-cta,
+      .nav-actions .nav-cv {
+        width: auto;
+        flex: 1 1 0;
       }
 
       h1 {
@@ -1197,7 +1230,10 @@
         <a href="#skills">Skills</a>
         <a href="#contact">Contact</a>
       </nav>
-      <a class="nav-cta" href="#contact">Let’s talk</a>
+      <div class="nav-actions">
+        <a class="nav-cta nav-cv" href="assets/Harsha-Walisundara-Resume.pdf" download>Download CV</a>
+        <a class="nav-cta" href="#contact">Let’s talk</a>
+      </div>
     </div>
   </header>
 
