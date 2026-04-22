@@ -933,6 +933,28 @@
       overflow-wrap: anywhere;
     }
 
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 16px;
+      padding: 11px 16px;
+      border-radius: 999px;
+      background: rgba(110, 231, 216, 0.12);
+      border: 1px solid rgba(110, 231, 216, 0.22);
+      color: var(--text);
+      font-weight: 700;
+      width: fit-content;
+      transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
+    }
+
+    .project-link:hover,
+    .project-link:focus-visible {
+      transform: translateY(-1px);
+      background: rgba(110, 231, 216, 0.18);
+      border-color: rgba(110, 231, 216, 0.3);
+    }
+
     .contact {
       display: grid;
       grid-template-columns: 1fr auto;
@@ -1484,6 +1506,7 @@
                   <li>Visual direction focused on trust, clarity, and strong CTA placement.</li>
                   <li>Shown here with a homepage preview based on the live site.</li>
                 </ul>
+                <a class="project-link" href="https://slfestival.lk" target="_blank" rel="noreferrer">Visit slfestival.lk</a>
               </div>
             </article>
 
