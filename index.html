@@ -537,6 +537,69 @@
       border: 1px solid rgba(255, 255, 255, 0.08);
     }
 
+    .education-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 14px;
+      padding: 26px;
+    }
+
+    .education-card {
+      display: grid;
+      grid-template-columns: 76px 1fr;
+      gap: 16px;
+      align-items: start;
+      padding: 20px;
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .school-logo {
+      width: 76px;
+      height: 76px;
+      display: grid;
+      place-items: center;
+      border-radius: 22px;
+      font-family: "Sora", sans-serif;
+      font-weight: 800;
+      font-size: 1.1rem;
+      letter-spacing: 0.08em;
+      color: #f8fffd;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14), 0 12px 24px rgba(0, 0, 0, 0.18);
+    }
+
+    .school-logo.wrexham {
+      background: linear-gradient(135deg, #3f1d77, #0c5d7a);
+    }
+
+    .school-logo.moratuwa {
+      background: linear-gradient(135deg, #0d5d62, #10407d);
+    }
+
+    .school-logo.itum {
+      background: linear-gradient(135deg, #8c3357, #c65e34);
+    }
+
+    .education-copy {
+      display: grid;
+      gap: 8px;
+    }
+
+    .school-name {
+      color: var(--text);
+      font-weight: 700;
+      line-height: 1.4;
+      margin: 0;
+    }
+
+    .education-copy p {
+      color: var(--muted);
+      margin: 0;
+      line-height: 1.7;
+    }
+
     .timeline {
       padding: 26px;
       display: grid;
@@ -640,20 +703,6 @@
       margin-bottom: 8px;
     }
 
-    .education-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 14px;
-      padding: 26px;
-    }
-
-    .education-card {
-      padding: 20px;
-      border-radius: 20px;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
     .education-card h3 {
       font-size: 1.05rem;
       margin-bottom: 10px;
@@ -664,12 +713,6 @@
       font-weight: 700;
       margin-bottom: 10px;
       font-size: 0.92rem;
-    }
-
-    .education-card p {
-      color: var(--muted);
-      margin: 0;
-      line-height: 1.7;
     }
 
     .services-bar {
@@ -901,10 +944,7 @@
         grid-template-columns: 1fr;
       }
 
-      .project-grid,
-      .education-grid,
-      .services-bar,
-      .showcase-grid {
+      .project-grid {
         grid-template-columns: 1fr;
       }
 
@@ -982,6 +1022,16 @@
         align-items: flex-start;
       }
 
+      .education-card {
+        grid-template-columns: 1fr;
+      }
+
+      .school-logo {
+        width: 64px;
+        height: 64px;
+        border-radius: 20px;
+      }
+
       .showcase-grid {
         padding-left: 18px;
         padding-right: 18px;
@@ -1007,6 +1057,7 @@
         <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
         <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
         <a href="#contact">Contact</a>
       </nav>
       <a class="nav-cta" href="#contact">Let’s talk</a>
@@ -1091,45 +1142,6 @@
               <div class="bullet"><i></i><span>Strong in C++, Qt/QML, JavaScript, and cross-platform UI implementation.</span></div>
               <div class="bullet"><i></i><span>Experience supporting QA, debugging, deployment, and app store releases.</span></div>
               <div class="bullet"><i></i><span>Comfortable working across macOS, Windows, Android, and Linux environments.</span></div>
-            </div>
-          </div>
-
-          <div class="skill-grid">
-            <div class="skill-card">
-              <h3>Core stack</h3>
-              <p>C++, Qt/QML, JavaScript, Java, React, RESTful APIs</p>
-              <div class="chips">
-                <span class="chip">Qt Creator</span>
-                <span class="chip">QMake</span>
-                <span class="chip">CMake</span>
-              </div>
-            </div>
-            <div class="skill-card">
-              <h3>Platforms</h3>
-              <p>macOS, Windows, Android, Linux</p>
-              <div class="chips">
-                <span class="chip">Desktop</span>
-                <span class="chip">Mobile</span>
-                <span class="chip">Cross-platform</span>
-              </div>
-            </div>
-            <div class="skill-card">
-              <h3>Delivery</h3>
-              <p>Manual testing, release support, Git workflows, agile collaboration</p>
-              <div class="chips">
-                <span class="chip">Git</span>
-                <span class="chip">Scrum</span>
-                <span class="chip">QA</span>
-              </div>
-            </div>
-            <div class="skill-card">
-              <h3>Focus areas</h3>
-              <p>Scalable UI architecture, hardware integration, performance, reliability</p>
-              <div class="chips">
-                <span class="chip">Hardware</span>
-                <span class="chip">Performance</span>
-                <span class="chip">UX</span>
-              </div>
             </div>
           </div>
         </div>
@@ -1273,29 +1285,76 @@
     <section class="section" id="education">
       <div class="wrap">
         <div class="section-head reveal">
-          <h2 class="section-title">Education & skills</h2>
-          <p>Formal education and the tools I use to move work forward.</p>
+          <h2 class="section-title">Education</h2>
+          <p>Formal study highlights with clearer visual treatment for each institution.</p>
         </div>
         <div class="panel education-grid reveal">
-          <div class="education-card">
-            <div class="meta">Oct 2023 - Oct 2024</div>
-            <h3>BSc (Hons) in Computing</h3>
-            <p>Wrexham Glyndwr University, Second Class (Division 1).</p>
-          </div>
-          <div class="education-card">
-            <div class="meta">Oct 2020 - Apr 2023</div>
-            <h3>Diploma in Information Technology</h3>
-            <p>Institute of Technology, University of Moratuwa.</p>
-          </div>
-          <div class="education-card">
-            <div class="meta">Technical stack</div>
-            <h3>Languages and tools</h3>
-            <p>C++, Java, JavaScript (ES6+), Qt/QML, React, Firebase, RESTful APIs, GitHub, Bitbucket, VS Code.</p>
-          </div>
-          <div class="education-card">
-            <div class="meta">Workflow</div>
-            <h3>How I like to work</h3>
-            <p>Agile collaboration, clear documentation, clean iteration, and dependable delivery under release pressure.</p>
+          <article class="education-card">
+            <div class="school-logo wrexham">WU</div>
+            <div class="education-copy">
+              <div class="meta">Oct 2023 - Oct 2024</div>
+              <h3>BSc (Hons) in Computing</h3>
+              <p class="school-name">Wrexham University</p>
+              <p>Second Class (Division 1). Built a stronger foundation in software engineering, problem solving, and modern computing practices.</p>
+            </div>
+          </article>
+          <article class="education-card">
+            <div class="school-logo moratuwa">UoM</div>
+            <div class="education-copy">
+              <div class="meta">Oct 2020 - Apr 2023</div>
+              <h3>Diploma in Information Technology</h3>
+              <p class="school-name">Institute of Technology, University of Moratuwa</p>
+              <p>Focused on applied IT fundamentals, software development, and the practical skills that support product delivery.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <h2 class="section-title">Skills</h2>
+          <p>Tools and working styles I lean on when building cross-platform products.</p>
+        </div>
+        <div class="panel reveal">
+          <div class="services-bar">
+            <article class="service-card">
+              <h3>Core stack</h3>
+              <p>C++, Qt/QML, JavaScript, Java, React, RESTful APIs</p>
+              <div class="chips">
+                <span class="chip">Qt Creator</span>
+                <span class="chip">QMake</span>
+                <span class="chip">CMake</span>
+              </div>
+            </article>
+            <article class="service-card">
+              <h3>Platforms</h3>
+              <p>macOS, Windows, Android, Linux</p>
+              <div class="chips">
+                <span class="chip">Desktop</span>
+                <span class="chip">Mobile</span>
+                <span class="chip">Cross-platform</span>
+              </div>
+            </article>
+            <article class="service-card">
+              <h3>Delivery</h3>
+              <p>Manual testing, release support, Git workflows, agile collaboration</p>
+              <div class="chips">
+                <span class="chip">Git</span>
+                <span class="chip">Scrum</span>
+                <span class="chip">QA</span>
+              </div>
+            </article>
+            <article class="service-card">
+              <h3>Focus areas</h3>
+              <p>Scalable UI architecture, hardware integration, performance, reliability</p>
+              <div class="chips">
+                <span class="chip">Hardware</span>
+                <span class="chip">Performance</span>
+                <span class="chip">UX</span>
+              </div>
+            </article>
           </div>
         </div>
       </div>
