@@ -491,6 +491,42 @@
       max-width: 72ch;
     }
 
+    .experience-panel {
+      display: grid;
+      gap: 18px;
+      padding: 26px;
+    }
+
+    .experience-panel .section-head {
+      display: grid;
+      gap: 10px;
+      align-items: start;
+      justify-content: start;
+      margin-bottom: 0;
+    }
+
+    .experience-panel .section-head p {
+      max-width: 72ch;
+    }
+
+    .projects-panel {
+      display: grid;
+      gap: 18px;
+      padding: 26px;
+    }
+
+    .projects-panel .section-head {
+      display: grid;
+      gap: 10px;
+      align-items: start;
+      justify-content: start;
+      margin-bottom: 0;
+    }
+
+    .projects-panel .section-head p {
+      max-width: 72ch;
+    }
+
     .about-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -1349,52 +1385,54 @@
 
     <section class="section" id="experience">
       <div class="wrap">
-        <div class="section-head reveal">
-          <h2 class="section-title">Experience</h2>
-          <p>Selected roles and the kind of impact I like to bring into a team.</p>
-        </div>
-        <div class="panel timeline reveal">
-          <article class="timeline-item">
-            <div class="timeline-date">Jan 2024 - Present</div>
-            <div>
-              <h3>Associate Software Engineer, Dr Paw Pvt Ltd</h3>
-              <div class="meta">Qt / QML, C++, JavaScript, QA, release management</div>
-              <p>
-                Developed and maintained cross-platform applications for Android, iOS, and Windows.
-                Built UI components in Qt/QML, implemented C++ business logic, handled manual testing,
-                resolved platform-level issues, added printer and Windows integration, and supported iOS image
-                compression for better performance.
-              </p>
-            </div>
-          </article>
+        <div class="panel experience-panel reveal">
+          <div class="section-head">
+            <h2 class="section-title">Experience</h2>
+            <p>Selected roles and the kind of impact I like to bring into a team.</p>
+          </div>
+          <div class="timeline">
+            <article class="timeline-item">
+              <div class="timeline-date">Jan 2024 - Present</div>
+              <div>
+                <h3>Associate Software Engineer, Dr Paw Pvt Ltd</h3>
+                <div class="meta">Qt / QML, C++, JavaScript, QA, release management</div>
+                <p>
+                  Developed and maintained cross-platform applications for Android, iOS, and Windows.
+                  Built UI components in Qt/QML, implemented C++ business logic, handled manual testing,
+                  resolved platform-level issues, added printer and Windows integration, and supported iOS image
+                  compression for better performance.
+                </p>
+              </div>
+            </article>
 
-          <article class="timeline-item">
-            <div class="timeline-date">Apr 2023 - Dec 2023</div>
-            <div>
-              <h3>Intern Software Engineer, Dr Paw Pvt Ltd</h3>
-              <div class="meta">Cross-platform UI, debugging, technical documentation</div>
-              <p>
-                Contributed to the Dr Paw Veterinary App by designing user-friendly interfaces and building
-                Qt/QML components for veterinarians and pet owners. Collaborated in Scrum sprints, tested in
-                Linux and mobile environments, and wrote documentation for deployment and maintenance.
-              </p>
-            </div>
-          </article>
+            <article class="timeline-item">
+              <div class="timeline-date">Apr 2023 - Dec 2023</div>
+              <div>
+                <h3>Intern Software Engineer, Dr Paw Pvt Ltd</h3>
+                <div class="meta">Cross-platform UI, debugging, technical documentation</div>
+                <p>
+                  Contributed to the Dr Paw Veterinary App by designing user-friendly interfaces and building
+                  Qt/QML components for veterinarians and pet owners. Collaborated in Scrum sprints, tested in
+                  Linux and mobile environments, and wrote documentation for deployment and maintenance.
+                </p>
+              </div>
+            </article>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="section" id="projects">
       <div class="wrap">
-        <div class="section-head reveal">
-          <h2 class="section-title">What I do</h2>
-          <p>
-            I build and ship cross-platform products, then make them feel polished with real UI details,
-            testing, and release-minded engineering.
-          </p>
-        </div>
+        <div class="panel projects-panel reveal">
+          <div class="section-head">
+            <h2 class="section-title">What I do</h2>
+            <p>
+              I build and ship cross-platform products, then make them feel polished with real UI details,
+              testing, and release-minded engineering.
+            </p>
+          </div>
 
-        <div class="panel reveal">
           <div class="services-bar">
             <article class="service-card">
               <h3>Cross-platform apps</h3>
@@ -1411,7 +1449,7 @@
           </div>
 
           <div class="section-head" style="padding: 6px 26px 0;">
-            <h2 class="section-title" style="font-size: clamp(1.5rem, 2.4vw, 2.2rem);">Projects with screenshots</h2>
+            <h2 class="section-title" style="font-size: clamp(1.5rem, 2.4vw, 2.2rem);">Projects</h2>
             <p>
               Visual previews for SL Festival and Smart Traveller, plus a short DrPaw highlight without screenshots.
             </p>
