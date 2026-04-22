@@ -749,6 +749,41 @@
       aspect-ratio: 16 / 11;
     }
 
+    .text-preview {
+      aspect-ratio: 16 / 10;
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background:
+        radial-gradient(circle at top left, rgba(110, 231, 216, 0.18), transparent 32%),
+        radial-gradient(circle at bottom right, rgba(136, 166, 255, 0.15), transparent 30%),
+        linear-gradient(180deg, rgba(14, 22, 34, 0.98), rgba(10, 16, 26, 0.98));
+      display: grid;
+      align-content: center;
+      gap: 10px;
+      padding: 28px;
+      box-shadow: 0 14px 36px rgba(0, 0, 0, 0.24);
+    }
+
+    .text-preview .kicker {
+      font-size: 0.8rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .text-preview .title {
+      font-family: "Sora", sans-serif;
+      font-size: clamp(1.6rem, 2.7vw, 2.4rem);
+      letter-spacing: -0.04em;
+    }
+
+    .text-preview .sub {
+      color: var(--muted);
+      max-width: 24ch;
+      line-height: 1.6;
+    }
+
     .showcase-copy h3 {
       margin-bottom: 8px;
       font-size: 1.15rem;
@@ -1135,12 +1170,12 @@
           <div class="section-head" style="padding: 6px 26px 0;">
             <h2 class="section-title" style="font-size: clamp(1.5rem, 2.4vw, 2.2rem);">Projects with screenshots</h2>
             <p>
-              Real screenshots from DrPaw and visual previews for SL Festival and Smart Traveller.
+              Visual previews for SL Festival and Smart Traveller, plus a short DrPaw highlight without screenshots.
             </p>
           </div>
 
           <div class="showcase-grid">
-            <article class="showcase-card featured">
+            <article class="showcase-card">
               <figure class="shot-stack compact">
                 <img class="shot-main" src="assets/slfestival-preview.svg" alt="SL Festival website homepage preview" />
               </figure>
@@ -1161,10 +1196,10 @@
 
             <article class="showcase-card">
               <figure class="shot-stack">
-                <img class="shot-main" src="assets/drpaw-banner.png" alt="DrPaw app banner image" />
-                <div class="shot-strip">
-                  <img class="shot-thumb" src="assets/drpaw-add-new-pet.png" alt="DrPaw add new pet screen" />
-                  <img class="shot-thumb" src="assets/drpaw-otp.png" alt="DrPaw OTP verification screen" />
+                <div class="text-preview">
+                  <div class="kicker">DrPaw</div>
+                  <div class="title">Veterinary app</div>
+                  <div class="sub">Cross-platform workflows for health records, appointments, and connectivity.</div>
                 </div>
               </figure>
               <div class="showcase-copy">
