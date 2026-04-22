@@ -466,15 +466,20 @@
       overflow: hidden;
     }
 
-    .about-grid {
+    .about-panel {
       display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
       gap: 18px;
       padding: 26px;
     }
 
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+
     .about-text {
-      padding-right: 8px;
+      padding-right: 0;
     }
 
     .about-text p {
@@ -1293,28 +1298,30 @@
 
     <section class="section" id="about">
       <div class="wrap">
-        <div class="section-head reveal">
-          <h2 class="section-title">About me</h2>
-          <p>
-            I like building software that feels calm, reliable, and fast. My sweet spot is where engineering,
-            interface design, and real-world device or platform constraints meet.
-          </p>
-        </div>
-        <div class="panel about-grid reveal">
-          <div class="about-text">
+        <div class="panel about-panel reveal">
+          <div class="section-head">
+            <h2 class="section-title">About me</h2>
             <p>
-              I’ve worked on cross-platform applications that serve real users, including veterinary workflows,
-              digital appointments, notifications, printer connectivity, and release pipelines for mobile and desktop
-              environments.
+              I like building software that feels calm, reliable, and fast. My sweet spot is where engineering,
+              interface design, and real-world device or platform constraints meet.
             </p>
-            <p>
-              My background includes manual testing, production release management, and collaboration with agile
-              teams. I enjoy turning complicated technical work into a clean experience for users and teammates.
-            </p>
-            <div class="about-bullets">
-              <div class="bullet"><i></i><span>Strong in C++, Qt/QML, JavaScript, and cross-platform UI implementation.</span></div>
-              <div class="bullet"><i></i><span>Experience supporting QA, debugging, deployment, and app store releases.</span></div>
-              <div class="bullet"><i></i><span>Comfortable working across macOS, Windows, Android, and Linux environments.</span></div>
+          </div>
+          <div class="about-grid">
+            <div class="about-text">
+              <p>
+                I’ve worked on cross-platform applications that serve real users, including veterinary workflows,
+                digital appointments, notifications, printer connectivity, and release pipelines for mobile and desktop
+                environments.
+              </p>
+              <p>
+                My background includes manual testing, production release management, and collaboration with agile
+                teams. I enjoy turning complicated technical work into a clean experience for users and teammates.
+              </p>
+              <div class="about-bullets">
+                <div class="bullet"><i></i><span>Strong in C++, Qt/QML, JavaScript, and cross-platform UI implementation.</span></div>
+                <div class="bullet"><i></i><span>Experience supporting QA, debugging, deployment, and app store releases.</span></div>
+                <div class="bullet"><i></i><span>Comfortable working across macOS, Windows, Android, and Linux environments.</span></div>
+              </div>
             </div>
           </div>
         </div>
