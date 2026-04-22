@@ -928,6 +928,22 @@
       z-index: 0;
     }
 
+    @media (hover: none), (pointer: coarse) {
+      .cursor-glow {
+        display: none;
+      }
+
+      .hero-card {
+        transform: none !important;
+      }
+
+      .button,
+      .nav-links a,
+      .contact-link {
+        transition: none;
+      }
+    }
+
     @media (max-width: 980px) {
       .hero-grid,
       .about-grid,
@@ -966,29 +982,53 @@
 
     @media (max-width: 640px) {
       .wrap {
-        width: min(calc(100% - 24px), var(--max));
+        width: min(calc(100% - 20px), var(--max));
       }
 
       .hero {
-        padding-top: 56px;
+        padding-top: 44px;
+        padding-bottom: 28px;
       }
 
       .nav {
-        gap: 12px 14px;
+        gap: 10px 12px;
+        padding: 14px 0 12px;
+        align-items: flex-start;
       }
 
       .nav-links {
+        justify-content: flex-start;
+        width: 100%;
         gap: 10px 14px;
         font-size: 0.9rem;
       }
 
       .nav-cta {
-        padding: 10px 14px;
+        width: 100%;
+        justify-content: center;
+        padding: 12px 14px;
         font-size: 0.92rem;
       }
 
       h1 {
         max-width: 100%;
+        font-size: clamp(2.35rem, 12vw, 3.2rem);
+        line-height: 1.05;
+      }
+
+      .hero-copy {
+        font-size: 0.98rem;
+        line-height: 1.7;
+        margin: 18px 0 24px;
+      }
+
+      .actions {
+        gap: 10px;
+      }
+
+      .button {
+        width: 100%;
+        justify-content: center;
       }
 
       .stats {
@@ -1000,15 +1040,15 @@
       }
 
       .services-bar {
-        padding: 20px 18px 0;
+        padding: 18px 16px 0;
       }
 
       .showcase-grid,
       .timeline,
       .project-grid,
       .education-grid {
-        padding-left: 18px;
-        padding-right: 18px;
+        padding-left: 16px;
+        padding-right: 16px;
       }
 
       .hero-card,
@@ -1017,13 +1057,37 @@
         border-radius: 22px;
       }
 
+      .hero-card {
+        padding: 20px;
+      }
+
       .profile-top,
       .contact {
         align-items: flex-start;
       }
 
+      .profile-top {
+        flex-direction: column;
+      }
+
+      .presence {
+        text-align: left;
+        width: 100%;
+        min-width: 0;
+      }
+
+      .stats {
+        gap: 10px;
+      }
+
+      .stat {
+        padding: 16px 14px;
+      }
+
       .education-card {
         grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 18px;
       }
 
       .school-logo {
@@ -1035,6 +1099,88 @@
       .showcase-grid {
         padding-left: 18px;
         padding-right: 18px;
+      }
+
+      .showcase-card {
+        padding: 14px;
+        border-radius: 22px;
+      }
+
+      .text-preview {
+        padding: 20px;
+      }
+
+      .contact {
+        padding: 20px;
+      }
+
+      .contact-links {
+        min-width: 0;
+      }
+
+      .contact-link {
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .wrap {
+        width: min(calc(100% - 16px), var(--max));
+      }
+
+      .brand {
+        gap: 10px;
+      }
+
+      .brand-mark {
+        width: 36px;
+        height: 36px;
+        border-radius: 12px;
+      }
+
+      .nav-links {
+        gap: 8px 10px;
+        font-size: 0.84rem;
+      }
+
+      .nav-links a::after {
+        bottom: -5px;
+      }
+
+      .meta-chip {
+        font-size: 0.84rem;
+        padding: 9px 12px;
+      }
+
+      .section {
+        padding: 36px 0;
+      }
+
+      .section-head {
+        margin-bottom: 16px;
+      }
+
+      .section-title {
+        font-size: clamp(1.55rem, 8vw, 2rem);
+      }
+
+      .services-bar,
+      .education-grid {
+        padding-left: 14px;
+        padding-right: 14px;
+      }
+
+      .service-card,
+      .education-card {
+        padding: 16px;
+      }
+
+      .hero-meta {
+        gap: 8px;
+        margin-top: 22px;
       }
     }
   </style>
@@ -1418,16 +1564,20 @@
     moveGlow(window.innerWidth * 0.7, window.innerHeight * 0.25);
 
     const heroCard = document.querySelector(".hero-card");
-    window.addEventListener("pointermove", (event) => {
-      const rect = heroCard.getBoundingClientRect();
-      const dx = (event.clientX - (rect.left + rect.width / 2)) / rect.width;
-      const dy = (event.clientY - (rect.top + rect.height / 2)) / rect.height;
-      heroCard.style.transform = `perspective(1200px) rotateY(${dx * 5}deg) rotateX(${dy * -5}deg) translateY(-2px)`;
-    }, { passive: true });
+    const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
 
-    window.addEventListener("pointerleave", () => {
-      heroCard.style.transform = "none";
-    });
+    if (heroCard && finePointer) {
+      window.addEventListener("pointermove", (event) => {
+        const rect = heroCard.getBoundingClientRect();
+        const dx = (event.clientX - (rect.left + rect.width / 2)) / rect.width;
+        const dy = (event.clientY - (rect.top + rect.height / 2)) / rect.height;
+        heroCard.style.transform = `perspective(1200px) rotateY(${dx * 5}deg) rotateX(${dy * -5}deg) translateY(-2px)`;
+      }, { passive: true });
+
+      window.addEventListener("pointerleave", () => {
+        heroCard.style.transform = "none";
+      });
+    }
   </script>
 </body>
 </html>
