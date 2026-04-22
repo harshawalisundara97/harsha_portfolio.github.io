@@ -527,6 +527,24 @@
       max-width: 72ch;
     }
 
+    .skills-panel {
+      display: grid;
+      gap: 18px;
+      padding: 26px;
+    }
+
+    .skills-panel .section-head {
+      display: grid;
+      gap: 10px;
+      align-items: start;
+      justify-content: start;
+      margin-bottom: 0;
+    }
+
+    .skills-panel .section-head p {
+      max-width: 72ch;
+    }
+
     .about-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -1544,11 +1562,11 @@
 
     <section class="section" id="skills">
       <div class="wrap">
-        <div class="section-head reveal">
-          <h2 class="section-title">Skills</h2>
-          <p>Tools and working styles I lean on when building cross-platform products.</p>
-        </div>
-        <div class="panel reveal">
+        <div class="panel skills-panel reveal">
+          <div class="section-head">
+            <h2 class="section-title">Skills</h2>
+            <p>Tools and working styles I lean on when building cross-platform products.</p>
+          </div>
           <div class="services-bar">
             <article class="service-card">
               <h3>Core stack</h3>
