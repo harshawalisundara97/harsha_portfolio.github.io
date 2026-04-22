@@ -546,40 +546,31 @@
 
     .education-card {
       display: grid;
-      grid-template-columns: 76px 1fr;
       gap: 16px;
-      align-items: start;
       padding: 20px;
       border-radius: 22px;
       background: rgba(255, 255, 255, 0.05);
       border: 1px solid rgba(255, 255, 255, 0.08);
     }
 
-    .school-logo {
-      width: 76px;
-      height: 76px;
+    .education-logo {
       display: grid;
       place-items: center;
-      border-radius: 22px;
-      font-family: "Sora", sans-serif;
-      font-weight: 800;
-      font-size: 1.1rem;
-      letter-spacing: 0.08em;
-      color: #f8fffd;
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14), 0 12px 24px rgba(0, 0, 0, 0.18);
+      min-height: 94px;
+      padding: 16px 18px;
+      border-radius: 20px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(243, 247, 252, 0.86));
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6), 0 16px 30px rgba(0, 0, 0, 0.18);
     }
 
-    .school-logo.wrexham {
-      background: linear-gradient(135deg, #3f1d77, #0c5d7a);
-    }
-
-    .school-logo.moratuwa {
-      background: linear-gradient(135deg, #0d5d62, #10407d);
-    }
-
-    .school-logo.itum {
-      background: linear-gradient(135deg, #8c3357, #c65e34);
+    .education-logo img {
+      display: block;
+      max-width: 100%;
+      max-height: 58px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
     }
 
     .education-copy {
@@ -1084,18 +1075,6 @@
         padding: 16px 14px;
       }
 
-      .education-card {
-        grid-template-columns: 1fr;
-        gap: 12px;
-        padding: 18px;
-      }
-
-      .school-logo {
-        width: 64px;
-        height: 64px;
-        border-radius: 20px;
-      }
-
       .showcase-grid {
         padding-left: 18px;
         padding-right: 18px;
@@ -1176,6 +1155,15 @@
       .service-card,
       .education-card {
         padding: 16px;
+      }
+
+      .education-logo {
+        min-height: 82px;
+        padding: 14px 16px;
+      }
+
+      .education-logo img {
+        max-height: 48px;
       }
 
       .hero-meta {
@@ -1436,7 +1424,9 @@
         </div>
         <div class="panel education-grid reveal">
           <article class="education-card">
-            <div class="school-logo wrexham">WU</div>
+            <div class="education-logo">
+              <img src="assets/wrexham-university-logo.svg" alt="Wrexham University logo" />
+            </div>
             <div class="education-copy">
               <div class="meta">Oct 2023 - Oct 2024</div>
               <h3>BSc (Hons) in Computing</h3>
@@ -1445,7 +1435,9 @@
             </div>
           </article>
           <article class="education-card">
-            <div class="school-logo moratuwa">UoM</div>
+            <div class="education-logo">
+              <img src="assets/university-of-moratuwa-logo.png" alt="University of Moratuwa logo" />
+            </div>
             <div class="education-copy">
               <div class="meta">Oct 2020 - Apr 2023</div>
               <h3>Diploma in Information Technology</h3>
