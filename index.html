@@ -99,8 +99,15 @@
       top: 0;
       z-index: 20;
       backdrop-filter: blur(18px);
-      background: rgba(6, 12, 21, 0.55);
+      background: rgba(6, 12, 21, 0.52);
       border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      transition: background 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+    }
+
+    header.is-scrolled {
+      background: rgba(4, 9, 16, 0.94);
+      border-bottom-color: rgba(255, 255, 255, 0.12);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.22);
     }
 
     .nav {
@@ -1592,6 +1599,14 @@
   <script>
     const yearEl = document.getElementById("year");
     yearEl.textContent = new Date().getFullYear();
+
+    const header = document.querySelector("header");
+    const syncHeaderState = () => {
+      header.classList.toggle("is-scrolled", window.scrollY > 8);
+    };
+
+    syncHeaderState();
+    window.addEventListener("scroll", syncHeaderState, { passive: true });
 
     const revealObserver = new IntersectionObserver(
       (entries) => {
